@@ -10,13 +10,13 @@ def main():
     idx_most_empty_pck = 0
     lightest_pck = MAX_PCK_WEIGHT
     weight_sent = 0
-    correct_weight_item = 0
+    correct_weight_count = 0
 
     # Prompt for the total number of items to be sent
     items_to_be_shipped = int(input("How many items do you wish to send: "))
 
     # Main loop to add items to packages
-    while correct_weight_item < items_to_be_shipped:
+    while correct_weight_count < items_to_be_shipped:
         item_weight = int(input("Please add the weight of the item or hit 0 to exit: "))
 
         # Check if the user wants to exit
@@ -33,7 +33,7 @@ def main():
         pck_weight += item_weight
 
         # Increment the count of correctly weighted items
-        correct_weight_item += 1
+        correct_weight_count += 1
 
         # Check if the current package is full
         if pck_weight > MAX_PCK_WEIGHT:
