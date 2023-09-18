@@ -58,7 +58,10 @@ def main():
     if pck_weight > 0:
         num_of_pck_sent += 1
         weight_sent += pck_weight
-        idx_most_empty_pck = num_of_pck_sent
+
+        if pck_weight < lightest_pck:
+            lightest_pck = pck_weight
+            idx_most_empty_pck = num_of_pck_sent
 
     # Calculate the unused capacity
     unused_capacity = num_of_pck_sent * MAX_PCK_WEIGHT - weight_sent
