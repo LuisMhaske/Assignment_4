@@ -8,7 +8,7 @@ def main():
     pck_weight = 0
     num_of_pck_sent = 0
     idx_most_empty_pck = 0
-    lightest_pck = MAX_PCK_WEIGHT
+    lightest_pck = MAX_PCK_WEIGHT  # Initialize with MAX_PCK_WEIGHT (used to track the lightest package)
     weight_sent = 0
     correct_weight_count = 0
 
@@ -58,9 +58,9 @@ def main():
     if pck_weight > 0:
         num_of_pck_sent += 1
         weight_sent += pck_weight
-
         if pck_weight < lightest_pck:
             lightest_pck = pck_weight
+
             idx_most_empty_pck = num_of_pck_sent
 
     # Calculate the unused capacity
@@ -71,6 +71,7 @@ def main():
     print("Total weight of packages sent:", weight_sent)
     print("Total unused capacity:", unused_capacity)
     print("Package with the most unused kilograms:", idx_most_empty_pck)
+    print("Lightest Package weight", lightest_pck)
 
 
 if __name__ == "__main__":
